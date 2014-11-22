@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<style>
+    
+</style>
+{% endblock %}
+
+{% block body %}
+
+<div>
+   <a href="#" id="sub">查看当天数据</a>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+<script type="text/javascript">
+
+$(function(){
+    $("#sub").click(function(){
+        $.ajax({
+            type : "post",
+            url : "getdata.php",
+            data : {a:'a'},
+            success : function(result) {
+                    console.log(result);
+                }
+            });
+        });
+});
+</script>
+
+{% endblock %}
